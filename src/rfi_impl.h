@@ -17,6 +17,15 @@ struct builtin {
 int rfi_load_1min(char **);
 int rfi_load_5min(char **);
 int rfi_load_15min(char **);
+int rfi_mem_free_bytes(char **);
+int rfi_mem_free_kb(char **);
+int rfi_mem_free_mb(char **);
+int rfi_mem_total_bytes(char **);
+int rfi_mem_total_kb(char **);
+int rfi_mem_total_mb(char **);
+int rfi_mem_used_bytes(char **);
+int rfi_mem_used_kb(char **);
+int rfi_mem_used_mb(char **);
 
 #ifdef __cplusplus
 }
