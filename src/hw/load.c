@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../rfi_impl.h"
 
-static int _get_load(int l, char **s) {
+static int _get_load(char **s, int l) {
 	int i;
 	char buf[4];
 	double a[3];
@@ -17,25 +17,13 @@ static int _get_load(int l, char **s) {
 }
 
 int rfi_load_1min(char **s) {
-	int i;
-	if((i = _get_load(1, s)) != 0) {
-		return i;
-	}
-	return 0;
+	return _get_load(s, 1);
 }
 
 int rfi_load_5min(char **s) {
-	int i;
-	if((i = _get_load(2, s)) != 0) {
-		return i;
-	}
-	return 0;
+	return _get_load(s, 2);
 }
 
 int rfi_load_15min(char **s) {
-	int i;
-	if((i = _get_load(3, s)) != 0) {
-		return i;
-	}
-	return 0;
+	return _get_load(s, 3);
 }
