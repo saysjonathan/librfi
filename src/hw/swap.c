@@ -4,7 +4,7 @@
 #include <sys/sysinfo.h>
 #include "../rfi_impl.h"
 
-struct mem {
+struct swap {
 	long int free_b;
 	long int free_kb;
 	long int free_mb;
@@ -16,7 +16,7 @@ struct mem {
 	long int used_mb;
 };
 
-static struct mem m;
+static struct swap m;
 static int set = 0;
 
 static int _get_sysinfo(void) {
@@ -41,7 +41,7 @@ static int _get_sysinfo(void) {
 	return 0;
 }
 
-static int _mem(char **s, long *l) {
+static int _swap(char **s, long *l) {
 	int i;
 	char buf[16];
 	if((i = _get_sysinfo()) != 0) {
@@ -52,38 +52,38 @@ static int _mem(char **s, long *l) {
 	return 0;
 }
 
-int rfi_mem_free_bytes(char **s) {
-	return _mem(s, &m.free_b);
+int rfi_swap_free_bytes(char **s) {
+	return _swap(s, &m.free_b);
 }
 
-int rfi_mem_free_kb(char **s) {
-	return _mem(s, &m.free_kb);
+int rfi_swap_free_kb(char **s) {
+	return _swap(s, &m.free_kb);
 }
 
-int rfi_mem_free_mb(char **s) {
-	return _mem(s, &m.free_mb);
+int rfi_swap_free_mb(char **s) {
+	return _swap(s, &m.free_mb);
 }
 
-int rfi_mem_total_bytes(char **s) {
-	return _mem(s, &m.total_b);
+int rfi_swap_total_bytes(char **s) {
+	return _swap(s, &m.total_b);
 }
 
-int rfi_mem_total_kb(char **s) {
-	return _mem(s, &m.total_kb);
+int rfi_swap_total_kb(char **s) {
+	return _swap(s, &m.total_kb);
 }
 
-int rfi_mem_total_mb(char **s) {
-	return _mem(s, &m.total_mb);
+int rfi_swap_total_mb(char **s) {
+	return _swap(s, &m.total_mb);
 }
 
-int rfi_mem_used_bytes(char **s) {
-	return _mem(s, &m.used_b);
+int rfi_swap_used_bytes(char **s) {
+	return _swap(s, &m.used_b);
 }
 
-int rfi_mem_used_kb(char **s) {
-	return _mem(s, &m.used_kb);
+int rfi_swap_used_kb(char **s) {
+	return _swap(s, &m.used_kb);
 }
 
-int rfi_mem_used_mb(char **s) {
-	return _mem(s, &m.used_mb);
+int rfi_swap_used_mb(char **s) {
+	return _swap(s, &m.used_mb);
 }

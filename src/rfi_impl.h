@@ -26,6 +26,15 @@ int rfi_mem_total_mb(char **);
 int rfi_mem_used_bytes(char **);
 int rfi_mem_used_kb(char **);
 int rfi_mem_used_mb(char **);
+int rfi_swap_free_bytes(char **);
+int rfi_swap_free_kb(char **);
+int rfi_swap_free_mb(char **);
+int rfi_swap_total_bytes(char **);
+int rfi_swap_total_kb(char **);
+int rfi_swap_total_mb(char **);
+int rfi_swap_used_bytes(char **);
+int rfi_swap_used_kb(char **);
+int rfi_swap_used_mb(char **);
 
 #ifdef __cplusplus
 }
