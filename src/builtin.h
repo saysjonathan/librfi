@@ -9,6 +9,7 @@ extern "C" {
 struct builtin builtins[] = {
 	{"load_1min", rfi_load_1min},
 	{"load_5min", rfi_load_5min},
+	{"load_15min", rfi_load_15min},
 };
 
 #ifdef __cplusplus

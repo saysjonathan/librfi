@@ -16,6 +16,7 @@ struct builtin {
 
 int rfi_load_1min(char **);
 int rfi_load_5min(char **);
+int rfi_load_15min(char **);
 
 #ifdef __cplusplus
 }
