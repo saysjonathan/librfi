@@ -1,0 +1,26 @@
+# hw
+* architecture
+* physical cpu count
+* logical cpu count
+* cpu speeds
+* uptime
+* virtual host type (if vm or ct)
+
+# os
+* kernel
+* OS
+* version (major, minor, release, path)
+* codename (if applicable)
+* family (if applicable)
+* timezone
+* hostname
+* fqdn
+
+# net
+* active interfaces
+* ip address
+
+# sw
+* python version
+* perl version
+* ruby version
