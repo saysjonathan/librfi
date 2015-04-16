@@ -1,7 +1,6 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
-#include "rfi_impl.h"
 #include "builtin.h"
 
 int rfi_get_one(char *name, rfi *r) {
@@ -40,4 +39,18 @@ int rfi_get_all(rfi *a[]) {
 	}
 	a[s] = NULL;
 	return 0;
+}
+
+void rfi_destroy_one(rfi *r) {
+	free(r->value);
+	free(r->name);
+}
+
+void rfi_destroy_all(rfi *a[]) {
+	int i;
+	for(i = 0; a[i] != NULL; i++) {
+		free(a[i]->value);
+		free(a[i]->name);
+		free(a[i]);
+	}
 }

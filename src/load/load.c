@@ -1,17 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "../rfi_impl.h"
+#include "load.h"
 
-static int _get_load(char **s, int l) {
+int _get_load(char **s, int l) {
 	int i;
-	char buf[4];
+	char buf[5];
 	double a[3];
 	i = getloadavg(a, 3);
 	if(i < 0) {
 		return i;
 	}
-	sprintf(buf, "%0.2f", a[l]);
+	sprintf(buf, "%0.2f", a[l-1]);
 	strncpy(*s, buf, strlen(buf));
 	return 0;
 }

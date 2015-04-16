@@ -4,7 +4,18 @@
 extern "C" {
 #endif
 
-#include "rfi_impl.h"
+#include "rfi.h"
+#include "load/load.h"
+#include "mem/mem.h"
+#include "swap/swap.h"
+
+#define MAXNAMELEN 512
+#define MAXVALUELEN 512
+
+struct builtin {
+	char *name;
+	int (*fn) (char **);
+};
 
 struct builtin builtins[] = {
 	{"load_1min",          rfi_load_1min},
